@@ -13,9 +13,8 @@
 -- Use Composer Library
 local composer = require( "composer" )
 
-local correctSounds = audio.loadSound("Sounds/Correct.wav")
-local correctSoundsChannel
-
+local booSounds = audio.loadSound("Sounds/boo.mp3")
+local booSoundsChannel
 -----------------------------------------------------------------------------------------
 
 -- Use Widget Library
@@ -24,7 +23,7 @@ local widget = require( "widget" )
 -----------------------------------------------------------------------------------------
 
 -- Naming Scene
-sceneName = "you_win"
+sceneName = "you_lose"
 
 -- Creating Scene Object
 local scene = composer.newScene( sceneName ) -- This function doesn't accept a string, only a variable containing a string
@@ -45,7 +44,7 @@ function scene:create( event )
     -----------------------------------------------------------------------------------------
 
     -- Insert the background image and set it to the center of the screen
-    bkg_image = display.newImage("Images/Winscreen.png")
+    bkg_image = display.newImage("Images/Losescreen.png")
     bkg_image.x = display.contentCenterX
     bkg_image.y = display.contentCenterY
     bkg_image.width = display.contentWidth
@@ -77,9 +76,8 @@ function scene:show( event )
         -- Called when the scene is now on screen.
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
-
         -- start the splash screen music
-        correctSoundsChannel = audio.play( correctSounds )
+        booSoundsChannel = audio.play( booSounds )
     end
 
 end -- function scene:show( event )
@@ -108,7 +106,7 @@ function scene:hide( event )
     elseif ( phase == "did" ) then
         -- Called immediately after scene goes off screen.
         -- stop the jungle sounds channel for this screen
-        audio.stop(correctSoundsChannel)
+        audio.stop(booSoundsChannel)
     end
 
 end --function scene:hide( event )
