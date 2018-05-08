@@ -1,9 +1,8 @@
 -----------------------------------------------------------------------------------------
---
--- main.lua
--- Created by: Daniel Lopez-Carreon
--- Date: Nov. 22nd, 2014
--- Description: This calls the splash screen of the app to load itself.
+-- Title: Dragging Answers into Boxes
+-- Name: Chelsea NF
+-- Course: ICS2O/3C
+-- This program allows the user to drag the rigth answer into a box.
 -----------------------------------------------------------------------------------------
 
 -- Hiding Status Bar
