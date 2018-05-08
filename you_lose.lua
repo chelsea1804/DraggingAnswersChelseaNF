@@ -13,8 +13,8 @@
 -- Use Composer Library
 local composer = require( "composer" )
 
-local booSounds = audio.loadSound("Sounds/boo.mp3")
-local booSoundsChannel
+local loseSounds = audio.loadSound("Sounds/youLoseSound.mp3")
+local loseSoundsChannel
 -----------------------------------------------------------------------------------------
 
 -- Use Widget Library
@@ -77,7 +77,7 @@ function scene:show( event )
         -- Insert code here to make the scene come alive.
         -- Example: start timers, begin animation, play audio, etc.
         -- start the splash screen music
-        booSoundsChannel = audio.play( booSounds )
+        loseSoundsChannel = audio.play( loseSounds )
     end
 
 end -- function scene:show( event )
@@ -106,7 +106,7 @@ function scene:hide( event )
     elseif ( phase == "did" ) then
         -- Called immediately after scene goes off screen.
         -- stop the jungle sounds channel for this screen
-        audio.stop(booSoundsChannel)
+        audio.stop(loseSoundsChannel)
     end
 
 end --function scene:hide( event )

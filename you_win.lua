@@ -13,8 +13,8 @@
 -- Use Composer Library
 local composer = require( "composer" )
 
-local correctSounds = audio.loadSound("Sounds/Correct.wav")
-local correctSoundsChannel
+local laughSounds = audio.loadSound("Sounds/yabbadabbalaugh.wav")
+local laughSoundsChannel
 
 -----------------------------------------------------------------------------------------
 
@@ -79,7 +79,7 @@ function scene:show( event )
         -- Example: start timers, begin animation, play audio, etc.
 
         -- start the splash screen music
-        correctSoundsChannel = audio.play( correctSounds )
+        laughSoundsChannel = audio.play( laughSounds )
     end
 
 end -- function scene:show( event )
@@ -108,7 +108,7 @@ function scene:hide( event )
     elseif ( phase == "did" ) then
         -- Called immediately after scene goes off screen.
         -- stop the jungle sounds channel for this screen
-        audio.stop(correctSoundsChannel)
+        audio.stop(laughSoundsChannel)
     end
 
 end --function scene:hide( event )
